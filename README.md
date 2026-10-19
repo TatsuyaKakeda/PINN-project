@@ -2,14 +2,16 @@
 
 PyTorchで Physics-Informed Neural Networks (PINNs) を実装し、1次元調和振動子
 
-```text
-d²x/dt² = -x
-x(0) = 1
-dx/dt(0) = 0
-0 <= t <= 2π
-```
+$$
+\begin{aligned}
+\frac{d^2 x}{dt^2} &= -x \\
+x(0) &= 1 \\
+\frac{dx}{dt}(0) &= 0 \\
+0 &\leq t \leq 2\pi
+\end{aligned}
+$$
 
-を解く学習用プロジェクトです。解析解 `x(t)=cos(t)` は学習には使わず、学習後の評価と可視化にだけ使います。
+を解く学習用プロジェクトです。解析解 $x(t)=\cos(t)$ は学習には使わず、学習後の評価と可視化にだけ使います。
 
 ## 実行方法
 
@@ -24,7 +26,7 @@ python main.py
 
 実行後、`outputs/` に以下の図が保存されます。
 
-- `solution_comparison.png`: 解析解 `cos(t)` と PINN 予測の比較
+- `solution_comparison.png`: 解析解 $\cos(t)$ と PINN 予測の比較
 - `error_distribution.png`: 評価点での絶対誤差分布
 - `training_curve.png`: 全損失、物理残差、初期条件損失の学習曲線
 
